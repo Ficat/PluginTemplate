@@ -6,10 +6,17 @@
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.android</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <depends>com.intellij.modules.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.ficat.plugintemplate.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.ficat.plugintemplate.services.MyProjectService"/>
+    </extensions>
+
+    <extensions defaultExtensionNs="com.android.tools.idea.wizard.template">
+        <wizardTemplateProvider implementation="com.github.ficat.plugintemplate.mytemplate.PluginTemplateProviderImpl" />
     </extensions>
 
     <applicationListeners>

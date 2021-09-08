@@ -1,0 +1,2 @@
+1.old包中的wizard-template支持4.1/4.2，其是从4.2.1中拷出来的
+2.new包中的wizard-template支持Android Studio Arctic Fox | 2020.3.1及其以上，其是从Android Studio Arctic Fox | 2020.3.1拷出来的
