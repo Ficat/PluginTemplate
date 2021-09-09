@@ -114,16 +114,14 @@ fun RecipeExecutor.mvvmActivityRecipe(
         save(mvpFragment, srcOut.resolve("${pathFragment}${mvpName}Fragment.${fileSuffix}"))
     } else {
         save(mvpActivity, srcOut.resolve("${pathActivity}${mvpName}Activity.${fileSuffix}"))
+        generateManifest(
+            moduleData = moduleData,
+            activityClass = "${mvpName}Activity",
+            activityTitle = mvpName,//当版本为AndroidStudio ArcticFox|2020.3.1及其以上时，因对应的wizard-template无该参数，故要注释activityTitle
+            packageName = activityPackage,
+            isLauncher = false,
+            hasNoActionBar = false,
+            generateActivityTitle = false,
+        )
     }
-
-    generateManifest(
-        moduleData = moduleData,
-        activityClass = "${mvpName}Activity",
-        activityTitle = mvpName,//当版本为AndroidStudio ArcticFox|2020.3.1及其以上时，因对应的wizard-template无该参数，故要注释activityTitle
-        packageName = activityPackage,
-        isLauncher = false,
-        hasNoActionBar = false,
-        generateActivityTitle = false,
-    )
-
 }

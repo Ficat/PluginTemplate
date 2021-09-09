@@ -27,14 +27,6 @@ val MvpTemplate
             constraints = listOf(Constraint.NONEMPTY)
         }
 
-        val layoutName = stringParameter {
-            name = "Layout Name"
-            default = "activity_mvp_demo"
-            help = "请输入布局名"
-            constraints = listOf(Constraint.LAYOUT, Constraint.UNIQUE, Constraint.NONEMPTY)
-            suggest = { "${activityToLayout(mvpName.value.toLowerCase())}" }
-        }
-
         //java or kotlin, if true it's java or kotlin (default java)
         val javaOrKotlin = booleanParameter {
             name = "Is Java? (or Kotlin)"
@@ -68,6 +60,20 @@ val MvpTemplate
             visible = { true }
             enabled = { true }
             default = true
+        }
+
+        val layoutName = stringParameter {
+            name = "Layout Name"
+            default = "activity_mvp_demo"
+            help = "请输入布局名"
+            constraints = listOf(Constraint.LAYOUT, Constraint.UNIQUE, Constraint.NONEMPTY)
+            suggest = {
+                if (generateFragment.value) {
+                    "${fragmentToLayout(mvpName.value)}"
+                } else {
+                    "${activityToLayout(mvpName.value)}"
+                }
+            }
         }
 
         val packageName = defaultPackageNameParameter
