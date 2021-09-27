@@ -1,4 +1,4 @@
-package com.github.ficat.plugintemplate.mytemplate
+package com.github.ficat.plugintemplate.mytemplate.mvp
 
 import com.android.tools.idea.wizard.template.ModuleTemplateData
 import com.android.tools.idea.wizard.template.RecipeExecutor

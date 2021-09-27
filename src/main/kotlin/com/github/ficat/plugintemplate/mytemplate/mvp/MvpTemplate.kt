@@ -1,4 +1,4 @@
-package com.github.ficat.plugintemplate.mytemplate
+package com.github.ficat.plugintemplate.mytemplate.mvp
 
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
